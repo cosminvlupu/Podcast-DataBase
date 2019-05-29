@@ -15,10 +15,10 @@ public class LoginController {
     @FXML
     private Button LoginBtn;
 
-    public void Login(ActiveEvent login){
-        if(UserNameField.getText().equals("user") && PasswordField.getText().equals("pass") ){
+    public void Login(ActiveEvent login) {
+        if (UserNameField.getText().equals("user") && PasswordField.getText().equals("pass")) {
             System.out.println("Login successful");
-        }else{
+        } else {
             System.out.println("Login failed");
         }
     }

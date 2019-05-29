@@ -2,8 +2,15 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class SignUpController {
     @FXML
@@ -16,18 +23,31 @@ public class SignUpController {
     private PasswordField signUpPasswordRepeat;
 
 
-    public void Signup(ActionEvent actionEvent) {
+    public void Signup(ActionEvent actionEvent) throws IOException {
 
         String name = signUpNameInput.getText();
         String password = signUpPasswordInput.getText();
         String passwordAgain = signUpPasswordRepeat.getText();
 
-        if(name.isEmpty() || password.isEmpty() || passwordAgain.isEmpty()){
+        if (name.isEmpty() || password.isEmpty() || passwordAgain.isEmpty()) {
             System.out.println("All fields are required");
-        }else {
+        } else {
             if (password.equals(passwordAgain)) {
                 System.out.println(name + " signed up!");
+
+                Stage primaryStage = new Stage();
+                Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+                primaryStage.setTitle("Podcast DataBase");
+                primaryStage.setScene(new Scene(root, 300, 275));
+                primaryStage.show();
+
+                final Node source = (Node) actionEvent.getSource();
+                final Stage stage = (Stage) source.getScene().getWindow();
+                stage.close();
+
             } else {
+                signUpPasswordInput.setText("");
+                signUpPasswordRepeat.setText("");
                 System.out.println("Passwords don't match. Try again.");
             }
         }
