@@ -3,44 +3,33 @@ package sample;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.PasswordField;
-
-import java.awt.*;
+import javafx.scene.control.TextField;
 
 public class SignUpController {
     @FXML
-    private TextField nameInput;
-
-    private String name;
-    private String password;
-    private String passwordAgain;
+    private TextField signUpNameInput;
 
     @FXML
-    private PasswordField passwordInput;
+    private PasswordField signUpPasswordInput;
 
     @FXML
-    private  PasswordField passwordRepeat;
-
-    public void getUsername(){
-        this.name = nameInput.getText();
-    }
-
-    public void getPassword(){
-        this.password = passwordInput.getText();
-    }
-
-    public void getPasswordAgain(){
-        this.passwordAgain = passwordRepeat.getText();
-    }
+    private PasswordField signUpPasswordRepeat;
 
 
     public void Signup(ActionEvent actionEvent) {
-        //getUsername();
-        getPassword();
-        getPasswordAgain();
-        if(password.equals(passwordAgain)) {
-            System.out.println(name + "signed up!");
-        } else {
-            System.out.println("passwords don't match");
+
+        String name = signUpNameInput.getText();
+        String password = signUpPasswordInput.getText();
+        String passwordAgain = signUpPasswordRepeat.getText();
+
+        if(name.isEmpty() || password.isEmpty() || passwordAgain.isEmpty()){
+            System.out.println("All fields are required");
+        }else {
+            if (password.equals(passwordAgain)) {
+                System.out.println(name + " signed up!");
+            } else {
+                System.out.println("Passwords don't match. Try again.");
+            }
         }
     }
 }
