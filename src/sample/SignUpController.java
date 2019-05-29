@@ -38,7 +38,7 @@ public class SignUpController {
                 Stage primaryStage = new Stage();
                 Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
                 primaryStage.setTitle("Podcast DataBase");
-                primaryStage.setScene(new Scene(root, 300, 275));
+                primaryStage.setScene(new Scene(root, 475, 275));
                 primaryStage.show();
 
                 final Node source = (Node) actionEvent.getSource();
@@ -57,7 +57,7 @@ public class SignUpController {
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
         primaryStage.setTitle("Podcast DataBase");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 472, 275));
         primaryStage.show();
 
         final Node source = (Node) actionEvent.getSource();
