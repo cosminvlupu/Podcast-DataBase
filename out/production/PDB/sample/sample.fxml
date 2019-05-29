@@ -7,8 +7,10 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane alignment="center" hgap="10" prefHeight="500.0" prefWidth="500.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<GridPane alignment="center" hgap="10" prefHeight="300.0" prefWidth="300.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpController">
    <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
       <ColumnConstraints />
       <ColumnConstraints />
    </columnConstraints>
@@ -44,11 +46,18 @@
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
    </rowConstraints>
    <children>
-      <PasswordField promptText="input password" GridPane.columnIndex="1" GridPane.rowIndex="14" />
-      <PasswordField promptText="repeat password" GridPane.columnIndex="1" GridPane.rowIndex="17" />
-      <TextField promptText="input username" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-      <Button fx:id="SignUpBtn" alignment="CENTER" mnemonicParsing="false" onAction="#SUBtn" prefHeight="34.0" prefWidth="155.0" text="Sign up" GridPane.columnIndex="1" GridPane.rowIndex="22" />
+      <PasswordField id="passwordInput" onAction="#getPassword" promptText="input password" GridPane.columnIndex="3" GridPane.rowIndex="19" />
+      <PasswordField onAction="#getPasswordAgain" promptText="repeat password" GridPane.columnIndex="3" GridPane.rowIndex="22" />
+      <TextField id="nameInput" onAction="#getUsername" promptText="input username" GridPane.columnIndex="3" GridPane.rowIndex="16" />
+      <Button id="signupBtn" fx:id="SignUpBtn" alignment="CENTER" mnemonicParsing="false" onAction="#Signup" prefHeight="34.0" prefWidth="155.0" text="Sign up" GridPane.columnIndex="3" GridPane.rowIndex="28" />
    </children>
 </GridPane>
