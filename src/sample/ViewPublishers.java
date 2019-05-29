@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ViewPodcasts {
+public class ViewPublishers {
 
     public void ToTop(ActionEvent actionEvent) throws IOException {
         Stage primaryStage = new Stage();

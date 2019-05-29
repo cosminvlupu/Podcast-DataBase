@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class ViewPodcasts {
+public class ViewFollowing {
 
     public void ToTop(ActionEvent actionEvent) throws IOException {
         Stage primaryStage = new Stage();
@@ -108,3 +108,4 @@ public class ViewPodcasts {
         stage.close();
     }
 }
+

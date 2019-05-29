@@ -14,12 +14,12 @@
          <children>
             <Button mnemonicParsing="false" onAction="#ToTop" prefHeight="30.0" prefWidth="100.0" text="Top" />
             <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Suggestions" />
-            <Button layoutX="10.0" layoutY="40.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Following" />
+            <Button layoutX="10.0" layoutY="40.0" mnemonicParsing="false" onAction="#ToFollowing" prefHeight="30.0" prefWidth="100.0" text="Following" />
             <Button layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#ToPodcasts" prefHeight="30.0" prefWidth="100.0" text="Podcasts" />
-            <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Actors" />
-            <Button layoutX="10.0" layoutY="130.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Directors" />
-            <Button layoutX="10.0" layoutY="160.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Publishers" />
-            <Button layoutX="10.0" layoutY="190.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Writers" />
+            <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#ToActors" prefHeight="30.0" prefWidth="100.0" text="Actors" />
+            <Button layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#ToDirectors" prefHeight="30.0" prefWidth="100.0" text="Directors" />
+            <Button layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#ToPublishers" prefHeight="30.0" prefWidth="100.0" text="Publishers" />
+            <Button layoutX="10.0" layoutY="190.0" mnemonicParsing="false" onAction="#ToWriters" prefHeight="30.0" prefWidth="100.0" text="Writers" />
          </children>
       </VBox>
       <Label layoutX="157.0" prefHeight="78.0" prefWidth="216.0" text="Suggestions">
