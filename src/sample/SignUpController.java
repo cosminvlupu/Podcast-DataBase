@@ -52,4 +52,16 @@ public class SignUpController {
             }
         }
     }
+
+    public void Login(ActionEvent actionEvent) throws IOException{
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        primaryStage.setTitle("Podcast DataBase");
+        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.show();
+
+        final Node source = (Node) actionEvent.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
 }
