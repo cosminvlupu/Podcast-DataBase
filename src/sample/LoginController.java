@@ -28,9 +28,19 @@ public class LoginController {
     private  PasswordField PublisherPasswordField;
 
 
-    public void UserLogin(ActionEvent actionEvent) {
+    public void UserLogin(ActionEvent actionEvent) throws IOException {
         if (UserNameField.getText().equals("user") && UserPasswordField.getText().equals("pass")) {
             System.out.println("Login successful");
+
+            Stage primaryStage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("ViewSuggestions.fxml"));
+            primaryStage.setTitle("Podcast DataBase");
+            primaryStage.setScene(new Scene(root, 600, 400));
+            primaryStage.show();
+
+            final Node source = (Node) actionEvent.getSource();
+            final Stage stage = (Stage) source.getScene().getWindow();
+            stage.close();
         } else {
             System.out.println("Login failed");
         }
