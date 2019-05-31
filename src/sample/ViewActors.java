@@ -129,7 +129,7 @@ public class ViewActors {
         conn = new Database().getConnection();
 
         try{
-            CallableStatement cstmt = conn.prepareCall("{? = call lista_actori ()}");
+            CallableStatement cstmt = conn.prepareCall("{? = call lista_actors ()}");
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
             cstmt.execute();
             ResultSet rs = (ResultSet)cstmt.getObject(1);
