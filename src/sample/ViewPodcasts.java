@@ -159,7 +159,7 @@ public class ViewPodcasts extends Application{
         conn = new Database().getConnection();
 
         try{
-            CallableStatement cstmt = conn.prepareCall("{? = call paginare_podcasturi(10,20)}");
+            CallableStatement cstmt = conn.prepareCall("{? = call lista_podcasturi ()}");
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
             cstmt.execute();
             ResultSet rs = (ResultSet)cstmt.getObject(1);
@@ -203,7 +203,7 @@ public class ViewPodcasts extends Application{
             podcastTable.setItems(data);
         }catch(Exception e){
             e.printStackTrace();
-            System.out.println("Error on Building Data");
+            label.setText("Error on Building Data");
         }
     }
 
