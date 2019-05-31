@@ -27,13 +27,14 @@
             <Font name="System Bold" size="37.0" />
          </font>
       </Label>
-      <TableView layoutX="157.0" layoutY="64.0" prefHeight="273.0" prefWidth="423.0">
+      <TableView fx:id="podcastTable" layoutX="157.0" layoutY="64.0" prefHeight="273.0" prefWidth="423.0">
          <columns>
-            <TableColumn prefWidth="54.0" text="Nr. " />
-            <TableColumn prefWidth="121.0" text="Title" />
-            <TableColumn prefWidth="155.0" text="Description" />
-            <TableColumn prefWidth="92.0" text="Publish Date" />
+            <TableColumn fx:id="podcastNr" prefWidth="54.0" text="Nr. " />
+            <TableColumn fx:id="podcastTitle" prefWidth="121.0" text="Title" />
+            <TableColumn fx:id="podcastDescription" prefWidth="155.0" text="Description" />
+            <TableColumn fx:id="podcastDate" prefWidth="92.0" text="Publish Date" />
          </columns>
       </TableView>
+      <Button layoutX="58.0" layoutY="288.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>

@@ -1,5 +1,7 @@
 package sample;
 
+import connection.CreateConnection;
+import connection.Database;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,8 +13,12 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.*;
 
 public class SignUpController {
+    @FXML
+    private TextField emailInput;
+
     @FXML
     private TextField signUpNameInput;
 
@@ -23,11 +29,32 @@ public class SignUpController {
     private PasswordField signUpPasswordRepeat;
 
 
-    public void Signup(ActionEvent actionEvent) throws IOException {
+    public void Signup(ActionEvent actionEvent) throws IOException, SQLException {
 
         String name = signUpNameInput.getText();
         String password = signUpPasswordInput.getText();
         String passwordAgain = signUpPasswordRepeat.getText();
+
+        int ret_code;
+        Connection conn = null;
+        conn = new Database().getConnection();
+        String result = "";
+        try {
+
+            CallableStatement pstmt = conn.prepareCall("{call CREATE_USER(?,?,?)}");
+            pstmt.setString(1, name.toString());
+            pstmt.setString(2, "emaill@yahoo.com");//ADAUGA CAMP DE EMAIL
+            pstmt.setString(3, password.toString());
+
+            pstmt.executeUpdate();
+
+           // pstmt.close();
+           conn.close();
+        } catch (SQLException e) {
+            ret_code = e.getErrorCode();
+            System.err.println(ret_code + e.getMessage());
+            conn.close();
+        }
 
         if (name.isEmpty() || password.isEmpty() || passwordAgain.isEmpty()) {
             System.out.println("All fields are required");

@@ -55,6 +55,7 @@
       <RowConstraints />
       <RowConstraints />
       <RowConstraints />
+      <RowConstraints />
       <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
       <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
       <RowConstraints />
@@ -76,10 +77,11 @@
       <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
    </rowConstraints>
    <children>
-      <PasswordField id="signUpPasswordInput" fx:id="signUpPasswordInput" onAction="#Signup" promptText="input password" GridPane.columnIndex="3" GridPane.rowIndex="18" />
-      <PasswordField id="signUpPasswordRepeat" fx:id="signUpPasswordRepeat" onAction="#Signup" promptText="repeat password" GridPane.columnIndex="3" GridPane.rowIndex="23" />
-      <TextField id="signUpNameInput" fx:id="signUpNameInput" onAction="#Signup" promptText="input username" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-      <Button id="signUpBtn" fx:id="signUpBtn" alignment="CENTER" mnemonicParsing="false" onAction="#Signup" prefHeight="34.0" prefWidth="160.0" text="Sign up" GridPane.columnIndex="3" GridPane.rowIndex="32" />
-      <Button mnemonicParsing="false" onAction="#Login" prefHeight="27.0" prefWidth="158.0" text="Already have an account?" GridPane.columnIndex="3" GridPane.rowIndex="58" />
+      <PasswordField id="signUpPasswordInput" fx:id="signUpPasswordInput" onAction="#Signup" promptText="input password" GridPane.columnIndex="3" GridPane.rowIndex="19" />
+      <PasswordField id="signUpPasswordRepeat" fx:id="signUpPasswordRepeat" onAction="#Signup" promptText="repeat password" GridPane.columnIndex="3" GridPane.rowIndex="24" />
+      <TextField id="signUpNameInput" fx:id="signUpNameInput" onAction="#Signup" promptText="input username" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+      <Button id="signUpBtn" fx:id="signUpBtn" alignment="CENTER" mnemonicParsing="false" onAction="#Signup" prefHeight="34.0" prefWidth="160.0" text="Sign up" GridPane.columnIndex="3" GridPane.rowIndex="33" />
+      <Button mnemonicParsing="false" onAction="#Login" prefHeight="27.0" prefWidth="158.0" text="Already have an account?" GridPane.columnIndex="3" GridPane.rowIndex="59" />
+      <TextField fx:id="emailInput" promptText="input email" GridPane.columnIndex="3" />
    </children>
 </GridPane>

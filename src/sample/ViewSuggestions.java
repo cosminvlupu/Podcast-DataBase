@@ -1,5 +1,9 @@
 package sample;
 
+import controllers.PodcastController;
+import entities.Podcast;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -8,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class ViewSuggestions {
 
@@ -57,6 +62,10 @@ public class ViewSuggestions {
         final Node source = (Node) actionEvent.getSource();
         final Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
+    }
+    public void setPodcastTable() throws SQLException {
+
+
     }
 
     public void ToActors(ActionEvent actionEvent) throws IOException {

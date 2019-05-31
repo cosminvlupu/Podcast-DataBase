@@ -9,9 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
-import javax.print.DocFlavor;
 import java.io.IOException;
-import java.util.ResourceBundle;
 
 public class ViewTop {
 
