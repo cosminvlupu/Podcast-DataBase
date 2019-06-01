@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -28,6 +29,8 @@ public class LoginController {
     @FXML
     private PasswordField PublisherPasswordField;
 
+    @FXML
+    private Label label;
 
     public void UserLogin(ActionEvent actionEvent) throws IOException, SQLException {
         int ret_code;
@@ -46,7 +49,7 @@ public class LoginController {
             result = pstmt.getString(3);
             System.out.println("Aici: " + result);
             pstmt.executeUpdate();
-            //pstmt.close();
+            pstmt.close();
             //conn.close();
 
             if (result.equals("succes")) {
@@ -67,8 +70,8 @@ public class LoginController {
 
         } catch (SQLException e) {
             ret_code = e.getErrorCode();
-            System.err.println(ret_code + e.getMessage());
-            conn.close();
+            label.setText(ret_code + e.getMessage());
+           // conn.close();
         }
 
     }
@@ -88,14 +91,14 @@ public class LoginController {
             if (rset.next()) count = rset.getInt("total");
 
             System.out.println(count);
-           // rset.close();
-           // st.close();
-           // conn.close();
+            // rset.close();
+            // st.close();
+            // conn.close();
 
         } catch (SQLException e) {ret_code = e.getErrorCode();
             System.err.println(ret_code + e.getMessage()); conn.close();}
 
-        if (count != 1) {
+        if (count == 1) {
             System.out.println("Login successful");
 
             Stage primaryStage = new Stage();
@@ -108,7 +111,7 @@ public class LoginController {
             final Stage stage = (Stage) source.getScene().getWindow();
             stage.close();
         } else {
-            System.out.println("Login failed");
+            label.setText("Login failed");
         }
     }
 

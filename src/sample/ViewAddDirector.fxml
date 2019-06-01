@@ -22,7 +22,7 @@
             <Button layoutX="268.0" layoutY="111.0" mnemonicParsing="false" onAction="#add" text="Add Director" />
             <TextField fx:id="firstName" layoutX="235.0" layoutY="41.0" prefHeight="25.0" prefWidth="149.0" promptText="First Name" />
             <TextField fx:id="lastName" layoutX="235.0" layoutY="78.0" promptText="Last Name" />
-            <Label fx:id="label" layoutX="236.0" layoutY="143.0" prefHeight="39.0" prefWidth="149.0" />
+            <Label fx:id="label" layoutX="170.0" layoutY="143.0" prefHeight="39.0" prefWidth="257.0" />
          </children>
       </AnchorPane>
    </children>

@@ -27,10 +27,10 @@
             <Font name="System Bold" size="37.0" />
          </font>
       </Label>
-      <TableView fx:id="podcastTable" layoutX="155.0" layoutY="68.0" onMouseClicked="#buildData" prefHeight="245.0" prefWidth="437.0" />
-      <Button layoutX="58.0" layoutY="288.0" mnemonicParsing="false" onAction="#buildData" text="Button" />
-      <Button fx:id="left" layoutX="311.0" layoutY="333.0" mnemonicParsing="false" text="&lt;" />
-      <Button fx:id="right" layoutX="395.0" layoutY="333.0" mnemonicParsing="false" text="&gt;" />
+      <TableView fx:id="podcastTable" layoutX="155.0" layoutY="68.0" prefHeight="245.0" prefWidth="437.0" />
+      <Button layoutX="58.0" layoutY="288.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="left" layoutX="311.0" layoutY="333.0" mnemonicParsing="false" onAction="#toLeft" text="&lt;" />
+      <Button fx:id="right" layoutX="395.0" layoutY="333.0" mnemonicParsing="false" onAction="#toRight" text="&gt;" />
       <TextField fx:id="howMany" layoutX="336.0" layoutY="333.0" prefHeight="25.0" prefWidth="59.0" text="10" />
       <Label fx:id="label" layoutX="311.0" layoutY="358.0" prefHeight="30.0" prefWidth="108.0" />
    </children>

@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.Date;
 
-public class ViewPodcasts extends Application{
+public class ViewPodcasts extends Application {
     @FXML
     TableView podcastTable;
     /*@FXML
@@ -50,9 +50,9 @@ public class ViewPodcasts extends Application{
     @FXML
     Label label;
 
-    private int amount =10;
-    private int leftValue = 0;
-    private int rightValue = 10;
+    private int amount = 10;
+    private int leftValue = -10;
+    private int rightValue = 0;
 
     private PodcastController podcastController;
     private ObservableList<ObservableList> data;
@@ -154,27 +154,32 @@ public class ViewPodcasts extends Application{
         stage.close();
     }
 
-    public void buildData(){
+    public void buildData(int lefty, int righty) {
         Connection conn = null;
         conn = new Database().getConnection();
 
-        try{
-            CallableStatement cstmt = conn.prepareCall("{? = call lista_podcasturi ()}");
+        try {
+            CallableStatement cstmt = conn.prepareCall("{? = call paginarea_podcasturilor(?,?)}");
             cstmt.registerOutParameter(1, OracleTypes.CURSOR);
+            cstmt.setInt(2, lefty);
+            cstmt.setInt(3, righty);
+
+            System.out.println(cstmt);
             cstmt.execute();
-            ResultSet rs = (ResultSet)cstmt.getObject(1);
+            System.out.println(cstmt.toString());
+            ResultSet rs = (ResultSet) cstmt.getObject(1);
             ObservableList data = FXCollections.observableArrayList();
 
             /**********************************
              * TABLE COLUMN ADDED DYNAMICALLY *
              **********************************/
-            for(int i=0 ; i<rs.getMetaData().getColumnCount(); i++){
+            for (int i = 0; i < rs.getMetaData().getColumnCount(); i++) {
                 //We are using non property style for making dynamic table
                 final int j = i;
-                TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i+1));
+                TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i + 1));
                 //System.out.println(rs.getMetaData().getColumnName(i+1));
                 col.setMinWidth(25.0);
-                col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){
+                col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList, String>, ObservableValue<String>>() {
                     public ObservableValue<String> call(TableColumn.CellDataFeatures<ObservableList, String> param) {
                         System.out.println(param.getValue().get(j).toString());
                         return new SimpleStringProperty(param.getValue().get(j).toString());
@@ -182,28 +187,69 @@ public class ViewPodcasts extends Application{
                 });
 
                 podcastTable.getColumns().addAll(col);
-                System.out.println("Column ["+i+"] ");
+                System.out.println("Column [" + i + "] ");
             }
 
             /********************************
              * Data added to ObservableList *
              ********************************/
-            while(rs.next()){
+            while (rs.next()) {
                 //Iterate Row
                 ObservableList<String> row = FXCollections.observableArrayList();
-                for(int i=1 ; i<=rs.getMetaData().getColumnCount(); i++){
+                for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
                     //Iterate Column
                     row.add(rs.getString(i));
                 }
-                System.out.println("Row [1] added "+row );
+                System.out.println("Row [1] added " + row);
                 data.add(row);
             }
 
             //FINALLY ADDED TO TableView
             podcastTable.setItems(data);
-        }catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-            label.setText("Error on Building Data");
+            System.out.println("Error on Building Data");
+        }
+    }
+
+    public void toLeft() {
+        System.out.println("AM INTRAT AICI, APEL BUN!");
+        if(howMany.getText().isEmpty())
+            howMany.setText("0");
+
+        if (this.leftValue - Integer.parseInt(howMany.getText()) >= 1) {
+            label.setText("");
+            this.rightValue = this.leftValue - 1;
+            this.leftValue = this.leftValue - Integer.parseInt(howMany.getText());
+
+            podcastTable.getItems().clear();
+            podcastTable.getColumns().clear();
+
+            buildData(this.leftValue, this.rightValue);
+        }
+        else {
+            label.setText("Already at the beginning!");
+        }
+    }
+
+    public void toRight()  {
+        System.out.println("AM INTRAT AICI, APEL BUN!");
+        if(howMany.getText().isEmpty())
+            howMany.setText("0");
+        System.out.println(Integer.parseInt(howMany.getText()));
+        if (this.rightValue + Integer.parseInt(howMany.getText()) < 1000008) {
+            label.setText("");
+            this.leftValue = this.rightValue + 1;
+            this.rightValue = this.leftValue + Integer.parseInt(howMany.getText()) - 1;
+
+            podcastTable.getItems().clear();
+            podcastTable.getColumns().clear();
+
+            System.out.println(this.leftValue + " " + this.rightValue );
+            buildData(this.leftValue, this.rightValue);
+        }
+        else {
+            label.setText("Already at the end!");
         }
     }
 
@@ -215,7 +261,6 @@ public class ViewPodcasts extends Application{
         System.out.println("Chiar intru aici!");
         stage.setScene(scene);
         stage.show();
-        //TableView
-        buildData();
+
     }
 }

@@ -125,6 +125,9 @@ public class ViewActors {
     }
 
     public void buildData(){
+        actorsTable.getItems().clear();
+        actorsTable.getColumns().clear();
+
         Connection conn = null;
         conn = new Database().getConnection();
 

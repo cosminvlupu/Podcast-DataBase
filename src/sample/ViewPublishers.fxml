@@ -9,27 +9,23 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ViewPublishers">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+      <VBox layoutX="34.0" layoutY="27.0" prefHeight="234.0" prefWidth="100.0">
          <children>
-            <VBox layoutX="34.0" layoutY="27.0" prefHeight="234.0" prefWidth="100.0">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#ToTop" prefHeight="30.0" prefWidth="100.0" text="Top" />
-                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ToSuggestions" prefHeight="30.0" prefWidth="100.0" text="Suggestions" />
-                  <Button layoutX="10.0" layoutY="40.0" mnemonicParsing="false" onAction="#ToFollowing" prefHeight="30.0" prefWidth="100.0" text="Following" />
-                  <Button layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#ToPodcasts" prefHeight="30.0" prefWidth="100.0" text="Podcasts" />
-                  <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#ToActors" prefHeight="30.0" prefWidth="100.0" text="Actors" />
-                  <Button layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#ToDirectors" prefHeight="30.0" prefWidth="100.0" text="Directors" />
-                  <Button layoutX="10.0" layoutY="160.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Publishers" />
-                  <Button layoutX="10.0" layoutY="190.0" mnemonicParsing="false" onAction="#ToWriters" prefHeight="30.0" prefWidth="100.0" text="Writers" />
-               </children>
-            </VBox>
-            <Label layoutX="157.0" prefHeight="78.0" prefWidth="216.0" text="Publishers">
-               <font>
-                  <Font name="System Bold" size="37.0" />
-               </font>
-            </Label>
-            <TableView fx:id="publishersTable" layoutX="157.0" layoutY="64.0" onMouseClicked="#buildData" prefHeight="273.0" prefWidth="423.0" />
+            <Button mnemonicParsing="false" onAction="#ToTop" prefHeight="30.0" prefWidth="100.0" text="Top" />
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#ToSuggestions" prefHeight="30.0" prefWidth="100.0" text="Suggestions" />
+            <Button layoutX="10.0" layoutY="40.0" mnemonicParsing="false" onAction="#ToFollowing" prefHeight="30.0" prefWidth="100.0" text="Following" />
+            <Button layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#ToPodcasts" prefHeight="30.0" prefWidth="100.0" text="Podcasts" />
+            <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#ToActors" prefHeight="30.0" prefWidth="100.0" text="Actors" />
+            <Button layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#ToDirectors" prefHeight="30.0" prefWidth="100.0" text="Directors" />
+            <Button layoutX="10.0" layoutY="160.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Publishers" />
+            <Button layoutX="10.0" layoutY="190.0" mnemonicParsing="false" onAction="#ToWriters" prefHeight="30.0" prefWidth="100.0" text="Writers" />
          </children>
-      </AnchorPane>
+      </VBox>
+      <Label layoutX="157.0" prefHeight="78.0" prefWidth="216.0" text="Publishers">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+      </Label>
+      <TableView fx:id = "publishersTable" layoutX="157.0" layoutY="64.0" onMouseClicked="#buildData" prefHeight="273.0" prefWidth="423.0" />
    </children>
 </AnchorPane>

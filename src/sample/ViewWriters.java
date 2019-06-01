@@ -28,6 +28,9 @@ public class ViewWriters {
     TableView writersTable;
 
     public void buildData(){
+        writersTable.getItems().clear();
+        writersTable.getColumns().clear();
+
         Connection conn = null;
         conn = new Database().getConnection();
 

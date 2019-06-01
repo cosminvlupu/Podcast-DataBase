@@ -87,7 +87,7 @@ public class ViewMyPodcasts {
         Stage primaryStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("Similarity.fxml"));
         primaryStage.setTitle("Podcast DataBase Publisher");
-        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.setScene(new Scene(root, 400, 250));
         primaryStage.show();
 
         final Node source = (Node) actionEvent.getSource();

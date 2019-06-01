@@ -27,14 +27,13 @@ public class ViewAddActor {
     @FXML
     private javafx.scene.control.Label label;
 
-    public void add(ActionEvent actionEvent) throws SQLException{
+    public void add(ActionEvent actionEvent) throws SQLException {
 
         label.setText("");
 
         if (firstName.getText().isEmpty() || lastName.getText().isEmpty()) {
             label.setText("All fields are required");
-        }
-        else {
+        } else {
 
             String fName = firstName.getText();
             String lName = lastName.getText();
@@ -52,10 +51,11 @@ public class ViewAddActor {
 
                 pstmt.executeUpdate();
 
-                label.setText(firstName + " " + lastName + " was added to " + "actors");
+
+                label.setText(fName + " " + lName + " was added to " + "actors");
 
                 // pstmt.close();
-                conn.close();
+                //conn.close();
             } catch (SQLException e) {
                 ret_code = e.getErrorCode();
                 label.setText(ret_code + e.getMessage());

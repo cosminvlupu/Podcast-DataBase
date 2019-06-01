@@ -56,7 +56,7 @@ public class SignUpController {
             pstmt.executeUpdate();
 
             // pstmt.close();
-            conn.close();
+            //conn.close();
         } catch (SQLException e) {
             ret_code = e.getErrorCode();
             label.setText(ret_code + e.getMessage());

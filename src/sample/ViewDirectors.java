@@ -28,6 +28,9 @@ public class ViewDirectors {
     private TableView directorsTable;
 
     public void buildData() {
+        directorsTable.getItems().clear();
+        directorsTable.getColumns().clear();
+
         Connection conn = null;
         conn = new Database().getConnection();
 

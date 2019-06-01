@@ -19,6 +19,8 @@
                   <Button layoutX="10.0" layoutY="40.0" mnemonicParsing="false" onAction="#ToViewAddActor" prefHeight="30.0" prefWidth="100.0" text="Add Actor" />
                   <Button layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#ToViewAddDirector" prefHeight="30.0" prefWidth="100.0" text="Add Director" />
                   <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#ToViewAddWriter" prefHeight="30.0" prefWidth="100.0" text="Add Writer" />
+                  <Button mnemonicParsing="false" onAction="#ToUpdateDelete" prefHeight="33.0" prefWidth="100.0" text="Update/Delete Writer" />
+                  <Button mnemonicParsing="false" onAction="#ToSimilarity" prefHeight="25.0" prefWidth="106.0" text="Similarity" />
                </children>
             </VBox>
             <Label layoutX="157.0" prefHeight="78.0" prefWidth="246.0" text="My Podcasts">

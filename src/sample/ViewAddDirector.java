@@ -52,9 +52,9 @@ public class ViewAddDirector {
 
                 pstmt.executeUpdate();
 
-                label.setText(firstName + " " + lastName + " was added to " + "directors");
+                label.setText(fName + " " + lName + " was added to " + "directors");
                 // pstmt.close();
-                conn.close();
+                //conn.close();
             } catch (SQLException e) {
                 ret_code = e.getErrorCode();
                 label.setText(ret_code + e.getMessage());

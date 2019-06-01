@@ -42,7 +42,7 @@ public class UpdateDeleteActor {
             label.setText("All fields are mandatory for an update");
         } else {
             try {
-                CallableStatement cs = conn.prepareCall("? = call update_actor(?,?,?)");
+                CallableStatement cs = conn.prepareCall("call update_actor(?,?,?)");
                 cs.setInt(1,Integer.parseInt(actorId));
                 cs.setString(2,firstName.toString());
                 cs.setString(3,lastName.toString());
@@ -65,7 +65,7 @@ public class UpdateDeleteActor {
             label.setText("ID is needed for delete");
         }else{
             try {
-                CallableStatement cs = conn.prepareCall("? = call delete_actor(?)");
+                CallableStatement cs = conn.prepareCall("call delete_actor(?)");
                 cs.setInt(1,Integer.parseInt(actorId));
 
                 cs.executeUpdate();
@@ -83,8 +83,8 @@ public class UpdateDeleteActor {
         conn = new Database().getConnection();
 
         try {
-            CallableStatement cs = conn.prepareCall("? = call functie_de_eroare(?)");
-            cs.setInt(1,202020);
+            CallableStatement cs = conn.prepareCall("call functie_de_eroare(?)");
+            cs.setString(1," ");
 
             cs.executeUpdate();
             label.setText("Exception");

@@ -52,10 +52,10 @@ public class ViewAddWriter {
 
                 pstmt.executeUpdate();
 
-                label.setText(firstName + " " + lastName + " was added to " + "writers");
+                label.setText(fName + " " + lName + " was added to " + "writers");
 
                 // pstmt.close();
-                conn.close();
+                //conn.close();
             } catch (SQLException e) {
                 ret_code = e.getErrorCode();
                 label.setText(ret_code + e.getMessage());
