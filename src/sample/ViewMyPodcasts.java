@@ -70,4 +70,28 @@ public class ViewMyPodcasts {
         final Stage stage = (Stage) source.getScene().getWindow();
         stage.close();
     }
+
+    public void ToUpdateDelete(ActionEvent actionEvent) throws IOException {
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("UpdateDeleteActor.fxml"));
+        primaryStage.setTitle("Podcast DataBase Publisher");
+        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.show();
+
+        final Node source = (Node) actionEvent.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
+
+    public void ToSimilarity(ActionEvent actionEvent) throws IOException {
+        Stage primaryStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("Similarity.fxml"));
+        primaryStage.setTitle("Podcast DataBase Publisher");
+        primaryStage.setScene(new Scene(root, 600, 400));
+        primaryStage.show();
+
+        final Node source = (Node) actionEvent.getSource();
+        final Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
+    }
 }

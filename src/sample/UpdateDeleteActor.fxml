@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="exception" prefHeight="347.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UpdateDeleteActor">
+   <children>
+      <TextField fx:id="id" layoutX="57.0" layoutY="62.0" promptText="id" />
+      <TextField fx:id="fname" layoutX="57.0" layoutY="120.0" promptText="first name" />
+      <TextField fx:id="lname" layoutX="57.0" layoutY="181.0" promptText="last name" />
+      <Button fx:id="update" layoutX="341.0" layoutY="31.0" mnemonicParsing="false" onAction="#update" prefHeight="44.0" prefWidth="132.0" text="Update" />
+      <Button fx:id="delete" layoutX="341.0" layoutY="87.0" mnemonicParsing="false" onAction="#delete" prefHeight="44.0" prefWidth="132.0" text="Delete" />
+      <Button fx:id="back" layoutX="341.0" layoutY="152.0" mnemonicParsing="false" onAction="#ToMyPodcasts" prefHeight="44.0" prefWidth="132.0" text="Back to My Podcasts" />
+      <Label fx:id="label" layoutX="43.0" layoutY="228.0" prefHeight="78.0" prefWidth="227.0" />
+      <Button layoutX="343.0" layoutY="208.0" mnemonicParsing="false" onAction="#getException" prefHeight="51.0" prefWidth="126.0" text="Get Exception" />
+   </children>
+</AnchorPane>
